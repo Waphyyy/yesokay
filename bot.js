@@ -70,4 +70,4 @@ client.on('message', message => {
     }
 });
 
-client.login('botsettings.token');
+client.login(process.env.BOT_TOKEN);
