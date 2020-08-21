@@ -50,7 +50,19 @@ client.on('message', message => {
     } if (message.content.includes('chan')) {
         message.channel.send(">///<");
     
-    }
+    } if (message.content === 'who') {
+        message.channel.send('pikachu');
+
+    } if (message.content.includes('zzz')) {
+        message.channel.send("goodnight");
+    
+    } if (message.content.includes('wap')) {
+        message.channel.send("<@310268418710437888>");
+    
+    } if (message.content.includes('loli', 'hentai')) {
+        message.channel.send("ANO YAN KAPATID");
+    
+    } 
 
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
