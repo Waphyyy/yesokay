@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const exampleEmbed = new Discord.MessageEmbed();
-const botsettings = require('./botsettings.json');
 
 client.once('ready', () => {
     console.log('Ready!');
