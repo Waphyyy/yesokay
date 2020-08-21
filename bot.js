@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const exampleEmbed = new Discord.MessageEmbed();
+const botsettings = require('./botsettings.json');
 
 client.once('ready', () => {
     console.log('Ready!');
@@ -60,10 +61,13 @@ client.on('message', message => {
 	if (command === 'ping') {
         client.commands.get('ping').execute(message, args, Discord, client);
 
+	} else if (command === '') {
+        client.commands.get('').execute(message, args, Discord, client);
+
 	} if (message.content === 'was paping') {
         message.channel.send("AYEEEEEEEEEEEEEEEEEE");
         
     }
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login(botsettings.token);
