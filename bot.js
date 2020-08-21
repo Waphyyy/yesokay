@@ -61,9 +61,6 @@ client.on('message', message => {
 	if (command === 'ping') {
         client.commands.get('ping').execute(message, args, Discord, client);
 
-	} else if (command === '') {
-        client.commands.get('').execute(message, args, Discord, client);
-
 	} if (message.content === 'was paping') {
         message.channel.send("AYEEEEEEEEEEEEEEEEEE");
         
