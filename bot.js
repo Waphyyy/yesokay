@@ -1,25 +1,25 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const client = new Discord.Client();
-client.commands = new Discord.Collection();
+const bot = new Discord.Client();
+bot.commands = new Discord.Collection();
 const exampleEmbed = new Discord.MessageEmbed();
 const botsettings = require('./botsettings.json');
 
-client.once('ready', () => {
+bot.once('ready', () => {
     console.log('Ready!');
-    client.user.setActivity(`was papping`);
+    bot.user.setActivity(`was papping`);
 });
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
-    client.commands.set(command.name, command);
+    bott.commands.set(command.name, command);
 }
 
 let prefix = 'e!'
 
-client.on('message', message => {
+bot.on('message', message => {
     if (message.content === 'was paping') {
         message.channel.send("AYEEEEEEEEEEEEEEEEEE");
         
@@ -59,15 +59,12 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
 	if (command === 'ping') {
-        client.commands.get('ping').execute(message, args, Discord, client);
+        bot.commands.get('ping').execute(message, args, Discord, bot);
 
 	} else if (command === '') {
-        client.commands.get('').execute(message, args, Discord, client);
-
-	} if (message.content === 'was paping') {
-        message.channel.send("AYEEEEEEEEEEEEEEEEEE");
+        bot.commands.get('').execute(message, args, Discord, bot);
         
     }
 });
 
-client.login(process.env.BOT_TOKEN);
+bot.login(process.env.BOT_TOKEN);
